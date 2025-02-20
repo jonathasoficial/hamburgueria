@@ -48,12 +48,34 @@ function addToCart(name, price) {
 
     if(existingItem) {
         existingItem.quantity += 1;
+        Toastify({
+            text: `Quantidade de ${name} aumentada!`,
+            duration: 2000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#16a34a",
+            },
+        }).showToast();
     } else {
         cart.push({
             name,
             price,
             quantity: 1
         });
+        Toastify({
+            text: `${name} adicionado ao carrinho!`,
+            duration: 2000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#16a34a",
+            },
+        }).showToast();
     }
     updateCartModal();
 }
@@ -127,7 +149,18 @@ checkoutBtn.addEventListener('click', function(){
     const isOpen = checkRestaurantOpen();
 
     if(!isOpen) {
-        alert("RESTAURANTE FECHADO NO MOMENTO!");
+        Toastify({
+            text: "Restaurante fechado no momento!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#ef4444",
+            },
+        }).showToast();
+
         return;
     }
 
@@ -166,7 +199,7 @@ function checkRestaurantOpen() {
     const data = new Date();
     const hora = data.getHours();
     console.log('Hora atual:', hora);
-    return hora >= 18 && hora <= 23;
+    return hora >= 8 && hora <= 23;
 }
 
 function updateRestaurantStatus() {
