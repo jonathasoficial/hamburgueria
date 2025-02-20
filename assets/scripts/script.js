@@ -199,7 +199,7 @@ function checkRestaurantOpen() {
     const data = new Date();
     const hora = data.getHours();
     console.log('Hora atual:', hora);
-    return hora >= 8 && hora <= 23;
+    return hora >= 18 && hora <= 23;
 }
 
 function updateRestaurantStatus() {
