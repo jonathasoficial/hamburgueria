@@ -73,7 +73,7 @@ export const Products = () => {
     ]
 
     return (
-        <div className="flex flex-col gap-4 items-center">
+        <>
             {productList.map((product, index) => (
                 <ProductCard
                     key={index}
@@ -83,6 +83,6 @@ export const Products = () => {
                     price={product.price}
                 />
             ))}
-        </div >
+        </>
     )
 }
