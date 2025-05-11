@@ -17,11 +17,3 @@
 .address {
     @apply text-white font-medium
 }
-
-.hoursBox {
-    @apply bg-green-600 px-4 py-1 rounded-lg mt-5
-}
-
-.hours {
-    @apply text-white font-medium
-}
